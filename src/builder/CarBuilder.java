@@ -1,5 +1,7 @@
 package builder;
 
+
+// you basically dont need this class since you can make it an inner class
 public class CarBuilder {
     private Car car;
 

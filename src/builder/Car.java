@@ -11,7 +11,41 @@ public class Car {
         this.year = year;
     }
 
-    // Getters and setters
+    public Car(CarBuilder builder){
+        this.make = builder.make;
+        this.year = builder.year;
+        this.model = builder.model;
+    }
+
+    //Creating inner CarBuilder class
+
+    public static class CarBuilder {
+        private String make;
+        private String model;
+        private int year;
+
+        public CarBuilder(){}
+
+        public CarBuilder make(String make){
+            this.make = make;
+            return this;
+        }
+        public CarBuilder year(int year){
+            this.year = year;
+            return this;
+        }
+
+        public CarBuilder model(String model){
+            this.model = model;
+            return this;
+        }
+
+        public Car build(){
+            return new Car(this);
+        }
+    }
+
+    // Getters and setters for car class
 
     public String getMake() {
         return make;

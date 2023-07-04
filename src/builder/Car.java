@@ -5,35 +5,36 @@ public class Car {
     private String model;
     private int year;
 
-    public Car(String make, String model, int year) {
-        this.make = make;
-        this.model = model;
-        this.year = year;
+    private Car(Builder builder) {
+        this.make = builder.make;
+        this.model = builder.model;
+        this.year = builder.year;
     }
 
-    // Getters and setters
+    // Getters
 
-    public String getMake() {
-        return make;
-    }
+    public static class Builder {
+        private String make;
+        private String model;
+        private int year;
 
-    public void setMake(String make) {
-        this.make = make;
-    }
+        public Builder setMake(String make) {
+            this.make = make;
+            return this;
+        }
 
-    public String getModel() {
-        return model;
-    }
+        public Builder setModel(String model) {
+            this.model = model;
+            return this;
+        }
 
-    public void setModel(String model) {
-        this.model = model;
-    }
+        public Builder setYear(int year) {
+            this.year = year;
+            return this;
+        }
 
-    public int getYear() {
-        return year;
-    }
-
-    public void setYear(int year) {
-        this.year = year;
+        public Car build() {
+            return new Car(this);
+        }
     }
 }

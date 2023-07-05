@@ -2,6 +2,7 @@ package prototype;
 
 public abstract class Shape implements Cloneable {
     protected String type;
+    public Shape(){}
 
     public void setType(String type) {
         this.type = type;
@@ -14,7 +15,8 @@ public abstract class Shape implements Cloneable {
     public abstract void draw();
 
     @Override
-    public Object clone() throws CloneNotSupportedException {
-        return super.clone();
+    public Shape clone() throws CloneNotSupportedException {
+        Shape s = new Circle();
+        return s;
     }
 }

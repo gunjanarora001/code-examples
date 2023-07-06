@@ -6,6 +6,6 @@ public class Coffee implements Beverage {
     }
 
     public String getDescription() {
-        return "decorator.Coffee";
+        return "Coffee";
     }
 }

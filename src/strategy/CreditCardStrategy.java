@@ -3,7 +3,7 @@ package strategy;
 public class CreditCardStrategy implements PaymentStrategy {
     private double interestRate;
 
-    public void setInterestRate(double interestRate) {
+    public CreditCardStrategy(double interestRate) {
         this.interestRate = interestRate;
     }
 

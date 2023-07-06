@@ -1,10 +1,8 @@
 package decorator;
 
-public class MilkDecorator implements Beverage {
-    private Beverage beverage;
-
+public class MilkDecorator extends BeverageDecorator {
     public MilkDecorator(Beverage beverage) {
-        this.beverage = beverage;
+        super(beverage);
     }
 
     public double cost() {
@@ -12,6 +10,6 @@ public class MilkDecorator implements Beverage {
     }
 
     public String getDescription() {
-        return "Milk";
+        return beverage.getDescription() + ", Milk";
     }
 }
